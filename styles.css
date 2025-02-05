@@ -69,6 +69,7 @@ h2 {
     gap: 1rem;
     justify-content: center;
     list-style: none;
+    z-index: 9;
 }
 .skill-item img {
     width: auto;
@@ -79,6 +80,7 @@ h2 {
     overflow-x: auto;
     gap: 2rem;
     padding: 1rem 0;
+    z-index: 3;
 }
 .blog-item img {
     width: 90%;
@@ -135,6 +137,7 @@ h2 {
 .mockup-container {
     text-align: center;
     margin-bottom: 2rem;
+    z-index: 3;
 }
 .mockup-container img {
     max-width: 80%;
@@ -318,6 +321,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+        z-index: 3;
     }
     .tech-container {
         background: rgba(50, 50, 50, 0.3);
@@ -576,7 +580,7 @@ html {
 /* 🔹 Fundo contínuo para toda a página com movimento constante */
 main {
     position: relative;
-    background:rgba(0,20,35,1);
+    background:rgba(0,10,17,1);
     background-size: 500% 500%;
     animation: gradientMove 20s linear infinite;
     overflow: hidden;
@@ -601,7 +605,7 @@ main {
 }
 
 /* 🔹 Posicionamento das auras laterais */
-.aura-left { top: 20%; left: -80px; animation-duration: 14s; }
+.aura-left { top: 10%; left: -80px; animation-duration: 14s; }
 .aura-right { top: 50%; right: -80px; animation-duration: 16s; }
 .aura-bottom { bottom: -80px; left: 50%; transform: translateX(-50%); animation-duration: 18s; }
 
@@ -713,33 +717,4 @@ main::before {
     width: 30%;
     left: 80%;
   }
-}
-
-/* 🔹 Vinhetas Laterais (Sombras nas bordas) */
-main::before,
-main::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    width: 39vw; /* Largura da vinheta */
-    height: 200vh; /* Altura da vinheta ocupando toda a tela */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-    backdrop-filter: 20px;
-    z-index: 0; /* Abaixo do botão fixo */
-    pointer-events: none; /* Não interfere na interação do usuário */
-}
-
-main::before {
-    left: 0; /* Vinheta na lateral esquerda */
-    z-index: 0;
-}
-
-main::after {
-    right: 0; /* Vinheta na lateral direita */
-    transform: scaleX(-1); /* Espelha a vinheta para o lado direito */
-    z-index: 0;
-}
-hero, footer {
-    position: relative;
-    z-index: 999;
 }
